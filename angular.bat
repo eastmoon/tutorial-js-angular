@@ -125,8 +125,7 @@ goto end
     echo      --help, -h        Show more information with CLI.
     echo.
     echo Command:
-    echo      ts                Startup and into typescript applicatin service.
-    echo      babel             Startup and into babel applicatin service.
+    echo      dev               Startup and into angular SDK with repo directory.
     echo.
     echo Run 'cli [COMMAND] --help' for more information on a command.
     goto end
