@@ -4,7 +4,7 @@
 
 本專案執行的範例：
 
-+ 使用 Angular CLI 建立與管理專案
++ [Angular CLI 建立與管理專案](./repo/readme.md)
 
 ## 執行
 
