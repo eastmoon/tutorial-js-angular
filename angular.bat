@@ -125,6 +125,7 @@ goto end
     echo      --help, -h        Show more information with CLI.
     echo.
     echo Command:
+    echo      ng                Startup and into angular SDK to control workspace.
     echo      dev               Startup and into angular SDK with repo directory.
     echo.
     echo Run 'cli [COMMAND] --help' for more information on a command.
@@ -132,30 +133,68 @@ goto end
 
 @rem ------------------- Common Command method -------------------
 
-:exec-docker
-    echo Create cache directory
-    if NOT EXIST %CLI_DIRECTORY%\cache\%1\node_modules (
-        mkdir %CLI_DIRECTORY%\cache\%1\node_modules
+@rem ------------------- Command "ng" method -------------------
+
+:cli-ng
+    echo ^> Create cache directory
+    if NOT EXIST %CLI_DIRECTORY%\cache (
+        mkdir %CLI_DIRECTORY%\cache
     )
+
+    echo ^> Build image
+    docker build --rm^
+        -t angular.sdk:%PROJECT_NAME%^
+        ./conf/docker/angular
+
+    echo ^> Startup service
+    docker rm -f %PROJECT_NAME%-ng
+    docker run -ti --rm ^
+        -v %CLI_DIRECTORY%\repo\%1:/repo ^
+        -w "/repo" ^
+        -p 4200:4200 ^
+        --name %PROJECT_NAME%-ng ^
+        angular.sdk:%PROJECT_NAME% bash
+    goto end
+
+:cli-ng-args
+    set COMMON_ARGS_KEY=%1
+    set COMMON_ARGS_VALUE=%2
+    goto end
+
+:cli-ng-help
+    echo This is a Command Line Interface with project %PROJECT_NAME%
+    echo Startup Server
+    echo.
+    echo Options:
+    echo      --help, -h        Show more information with UP Command.
+    goto end
+
+@rem ------------------- Command "dev" method -------------------
+
+:exec-docker
+    echo ^> Create cache directory
     if NOT EXIST %CLI_DIRECTORY%\cache\%1\dist (
         mkdir %CLI_DIRECTORY%\cache\%1\dist
     )
 
-    echo Startup service
+    echo ^> Build image
+    docker build --rm^
+        -t angular.sdk:%PROJECT_NAME%^
+        ./conf/docker/angular
+
+    echo ^> Startup service
     docker rm -f %PROJECT_NAME%-dev
     docker run -d ^
         -v %CLI_DIRECTORY%\repo\%1:/repo ^
         -v %CLI_DIRECTORY%\cache\%1\dist:/repo/dist ^
-        -v %CLI_DIRECTORY%\cache\%1\node_modules:/repo/node_modules ^
+        -p 80:4200 ^
         -w "/repo" ^
         --name %PROJECT_NAME%-dev ^
-        node:18 tail -f /dev/null
+        angular.sdk:%PROJECT_NAME%
     docker exec -ti %PROJECT_NAME%-dev npm install
     docker exec -ti %PROJECT_NAME%-dev bash
     docker rm -f %PROJECT_NAME%-dev
     goto end
-
-@rem ------------------- Command "dev" method -------------------
 
 :cli-dev
     if DEFINED SUB_REPOSITORY (
