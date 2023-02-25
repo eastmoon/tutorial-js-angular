@@ -142,6 +142,7 @@ goto end
     )
 
     echo Startup service
+    docker rm -f %PROJECT_NAME%-dev
     docker run -d ^
         -v %CLI_DIRECTORY%\repo\%1:/repo ^
         -v %CLI_DIRECTORY%\cache\%1\dist:/repo/dist ^
