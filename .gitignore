@@ -31,3 +31,6 @@ package-lock.json
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# vscode configurations
+.vscode/
