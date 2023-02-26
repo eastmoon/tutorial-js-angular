@@ -61,6 +61,8 @@ angular dev --repo=<repo-name>
         + [Deployment](https://angular.tw/guide/deployment)
         + [Building and serving Angular apps](https://angular.tw/guide/build)
         + [Angular CLI builders](https://angular.io/guide/cli-builder)
++ Issue
+    - [Angular on Docker hot reload not works](https://stackoverflow.com/questions/69101814)
 
 ## 項目
 
