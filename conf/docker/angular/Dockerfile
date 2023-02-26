@@ -13,4 +13,4 @@ RUN npm install -g @angular-devkit/schematics-cli
 WORKDIR /repo
 
 # COMMAND
-CMD ["tail", "-f", "/dev/null"]
+ADD docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh

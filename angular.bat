@@ -184,16 +184,13 @@ goto end
 
     echo ^> Startup service
     docker rm -f %PROJECT_NAME%-dev
-    docker run -d ^
+    docker run -ti --rm ^
         -v %CLI_DIRECTORY%\repo\%1:/repo ^
         -v %CLI_DIRECTORY%\cache\%1\dist:/repo/dist ^
         -p 80:4200 ^
         -w "/repo" ^
         --name %PROJECT_NAME%-dev ^
         angular.sdk:%PROJECT_NAME%
-    docker exec -ti %PROJECT_NAME%-dev npm install
-    docker exec -ti %PROJECT_NAME%-dev bash
-    docker rm -f %PROJECT_NAME%-dev
     goto end
 
 :cli-dev
