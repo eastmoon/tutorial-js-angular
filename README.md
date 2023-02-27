@@ -24,6 +24,12 @@ angular dev --repo=<repo-name>
 
 + [Angular CLI 建立與管理專案](./repo/readme.md)
 + [基礎專案](./repo/00-base)，執行 ```angular dev --repo=00-base```
+    - 單元測試
+    - 語法檢測
+    - 主題
++ 路由專案
++ 程式碼分割
++ 動態載入
 
 ## 文獻
 
@@ -63,17 +69,3 @@ angular dev --repo=<repo-name>
         + [Angular CLI builders](https://angular.io/guide/cli-builder)
 + Issue
     - [Angular on Docker hot reload not works](https://stackoverflow.com/questions/69101814)
-
-## 項目
-
-+ 編譯頁面
-+ 引用 Plugin
-+ 引用 Loader
-+ 引用 ESLint
-+ 框架使用
-    - 元件設計
-    - 樣式設計
-    - 主題設計
-+ 測試使用
-    - Pure Javascript
-    - Framework components
