@@ -23,7 +23,7 @@ angular dev --repo=<repo-name>
 本專案執行的範例：
 
 + [Angular CLI 建立與管理專案](./repo/readme.md)
-+ [基礎專案](./repo/base/readme.md)，執行 ```angular dev --repo=00-base```
++ [基礎專案](./repo/base/README.md)，執行 ```angular dev --repo=00-base```
     - [元件生命週期](https://angular.io/guide/lifecycle-hooks)
     - 單元測試
     - 語法檢測
