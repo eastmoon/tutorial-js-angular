@@ -23,11 +23,16 @@ angular dev --repo=<repo-name>
 本專案執行的範例：
 
 + [Angular CLI 建立與管理專案](./repo/readme.md)
-+ [基礎專案](./repo/00-base)，執行 ```angular dev --repo=00-base```
++ [基礎專案](./repo/base/readme.md)，執行 ```angular dev --repo=00-base```
+    - [元件生命週期](https://angular.io/guide/lifecycle-hooks)
     - 單元測試
     - 語法檢測
     - 主題
++ 服務專案
+    - [Add services](https://angular.io/tutorial/tour-of-heroes/toh-pt4)
+    - [Get data from a server](https://angular.io/tutorial/tour-of-heroes/toh-pt6)
 + 路由專案
+    - [Add navigation with routing](https://angular.io/tutorial/tour-of-heroes/toh-pt5)
 + 程式碼分割
 + 動態載入
 
