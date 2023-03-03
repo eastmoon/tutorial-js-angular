@@ -1,4 +1,4 @@
-# Base application
+# 應用程式基礎
 
 Angular 是完美符合 [MVVM](https://zh.wikipedia.org/zh-tw/MVVM) 的軟體架構，當然實際設計有細微的差異，可以參考一下文獻說明其軟體架構概念：
 
