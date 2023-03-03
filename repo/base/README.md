@@ -53,9 +53,9 @@ angular ng
 
 + 執行專案建立指令
 ```
-cd base
 ng generate component heroes
 ```
+> 使用 generate 必需在工作區 ( Workspace ) 目錄下
 
 Angualr 遵循物件導向的設計概念，一切皆已元件構築，若觀察其應用程式結構，其應用程式進入點是在應用程式原始碼目錄 ( src ) 的 [main.ts](./src/main.ts)，其中引入 [AppModule](./src/app/app.modules.ts) 來建立應用程式模組，並以 [AppComponent](./src/app/app.component.ts) 為應用程式的進入元件。
 
@@ -82,9 +82,9 @@ angular ng
 
 + 執行專案建立指令
 ```
-cd base
 ng generate interface hero
 ```
+> 使用 generate 必需在工作區 ( Workspace ) 目錄下
 
 [介面 ( Interface )](https://www.tutorialsteacher.com/typescript/typescript-interface) 是 TypeScript  的一種資料結構，其用途是一種定義好資料結構的名稱、屬性、方法，確保物件具有符合預期的操作與資料；但想較於物件導向中用於宣告類別的實作介面，TypeScript 中的介面用法更相似抽象類別 ( Abstract Class ) 與結構 ( Struct )。
 
