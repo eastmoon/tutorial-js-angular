@@ -23,18 +23,24 @@ angular dev --repo=<repo-name>
 本專案執行的範例：
 
 + [Angular CLI 建立與管理專案](./repo/readme.md)
-+ [基礎專案](./repo/base/README.md)，執行 ```angular dev --repo=00-base```
-    - [元件生命週期](https://angular.io/guide/lifecycle-hooks)
++ [基礎專案](./repo/base/README.md)，執行 ```angular dev --repo=base```
     - 單元測試
     - 語法檢測
     - 主題
-+ 服務專案
-    - [Add services](https://angular.io/tutorial/tour-of-heroes/toh-pt4)
-    - [Get data from a server](https://angular.io/tutorial/tour-of-heroes/toh-pt6)
-+ 路由專案
-    - [Add navigation with routing](https://angular.io/tutorial/tour-of-heroes/toh-pt5)
++ [服務專案](./repo/service/README.md)，執行 ```angular dev --repo=service```
++ [導覽專案](./repo/navigation/README.md)，執行 ```angular dev --repo=navigation```
 + 程式碼分割
+    - [Code Sharing Introduction](https://v6.docs.nativescript.org/angular/code-sharing/intro)
+    - [Speed Up Your Angular Application with Code Splitting](https://www.telerik.com/blogs/speed-up-angular-application-code-splitting)
+    - [Bundling and Code Splitting in Angular](https://www.pluralsight.com/guides/bundling-and-code-splitting-in-angular)
+    - [Route-level code splitting in Angular](https://web.dev/route-level-code-splitting-in-angular/)
 + 動態載入
+    - [Lazy-loading feature modules](https://angular.io/guide/lazy-loading-ngmodules)
+    - [Dynamic component loader](https://angular.io/guide/dynamic-component-loader)
+    - [Dynamically import module in Angular](https://dev.to/railsstudent/dynamically-import-module-in-angular-29n6)
+    - [Dynamic Imports: The Best Way to Improve an Angular App’s Performance](https://javascript.plainenglish.io/dynamic-imports-the-best-way-to-improve-angular-application-performance-2295f25adf83)
+    - [Using TypeScript Dynamic Imports in Angular](https://netbasal.com/d210547484dd)
+    - [Dynamic import NgModule | Angular 13](https://medium.com/@teslenkooleg2017/e7183c6743c6)
 
 ## 文獻
 
