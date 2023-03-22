@@ -18,7 +18,7 @@ Angular 是完美符合 [MVVM](https://zh.wikipedia.org/zh-tw/MVVM) 的軟體架
     - [Introduction to modules](https://angular.tw/guide/architecture-modules)
         + [What is an Angular Module?](https://angular-training-guide.rangle.io/modules/introduction)
         + [Angular 模組](https://jonny-huang.github.io/angular/training/06_angular_module/)
-        + [Frequently-used modules](https://angular.tw/guide/frequent-ngmodules)
+        + [Frequently-used modules](https://angular.tw/guide/frequent-les)
 + [Display a selection list](https://angular.io/tutorial/tour-of-heroes/toh-pt2)
     - [Structural directives](https://angular.tw/guide/structural-directives)
 + [Create a feature component](https://angular.io/tutorial/tour-of-heroes/toh-pt3)
@@ -128,7 +128,7 @@ ng generate interface hero
 
 Angular 應用程式啟動時便會運用第一個模組 AppModule，而所謂模組便是整合諸如元件、指另、服務等所有 Angular 框架類別的整合物件，其設計與 [PureMVC](https://puremvc.org/) 的 Facade 相同，其目的是提供一個應用程式服務、元件提取的介面，另框架中的各物件能正確從此處取得目標內容。
 
-而 Angular 透過模組的設計，將各種功能與服務分離成多種模組，並投過相依注入 ( Dependency Injection ) 原則讓需要使用的模組自 AppModule 中匯入，其中常用但也並非絕對需要的模組可以參考文獻 [Frequently-used modules](https://angular.tw/guide/frequent-ngmodules)。
+而 Angular 透過模組的設計，將各種功能與服務分離成多種模組，並投過相依注入 ( Dependency Injection ) 原則讓需要使用的模組自 AppModule 中匯入，其中常用但也並非絕對需要的模組可以參考文獻 [Frequently-used modules](https://angular.tw/guide/frequent-ngmodules)，NgModule 使用原則參考 [NgModule 常見問題解答](https://angular.tw/guide/ngmodule-faq)。
 
 # Angular operation document
 
