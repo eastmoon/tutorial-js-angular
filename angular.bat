@@ -127,11 +127,34 @@ goto end
     echo Command:
     echo      ng                Startup and into angular SDK to control workspace.
     echo      dev               Startup and into angular SDK with repo directory.
+    echo      build             Startup angular SDK with repo directory and building it.
     echo.
     echo Run 'cli [COMMAND] --help' for more information on a command.
     goto end
 
 @rem ------------------- Common Command method -------------------
+
+:exec-docker
+    echo ^> Create cache directory
+    if NOT EXIST %CLI_DIRECTORY%\cache\%1\dist (
+        mkdir %CLI_DIRECTORY%\cache\%1\dist
+    )
+
+    echo ^> Build image
+    docker build --rm^
+        -t angular.sdk:%PROJECT_NAME%^
+        ./conf/docker/angular
+
+    echo ^> Startup service
+    docker rm -f %PROJECT_NAME%-dev
+    docker run -ti --rm ^
+        -v %CLI_DIRECTORY%\repo\%1:/repo ^
+        -v %CLI_DIRECTORY%\cache\%1\dist:/repo/dist ^
+        -p 80:4200 ^
+        -w "/repo" ^
+        --name %PROJECT_NAME%-dev ^
+        angular.sdk:%PROJECT_NAME% %2
+    goto end
 
 @rem ------------------- Command "ng" method -------------------
 
@@ -171,32 +194,10 @@ goto end
 
 @rem ------------------- Command "dev" method -------------------
 
-:exec-docker
-    echo ^> Create cache directory
-    if NOT EXIST %CLI_DIRECTORY%\cache\%1\dist (
-        mkdir %CLI_DIRECTORY%\cache\%1\dist
-    )
-
-    echo ^> Build image
-    docker build --rm^
-        -t angular.sdk:%PROJECT_NAME%^
-        ./conf/docker/angular
-
-    echo ^> Startup service
-    docker rm -f %PROJECT_NAME%-dev
-    docker run -ti --rm ^
-        -v %CLI_DIRECTORY%\repo\%1:/repo ^
-        -v %CLI_DIRECTORY%\cache\%1\dist:/repo/dist ^
-        -p 80:4200 ^
-        -w "/repo" ^
-        --name %PROJECT_NAME%-dev ^
-        angular.sdk:%PROJECT_NAME%
-    goto end
-
 :cli-dev
     if DEFINED SUB_REPOSITORY (
         if EXIST %CLI_DIRECTORY%\repo\%SUB_REPOSITORY% (
-            call :exec-docker %SUB_REPOSITORY%
+            call :exec-docker %SUB_REPOSITORY% %SUB_REPOSITORY_COMMAND%
         ) else (
             echo chosen sub-repository is not exist.
         )
@@ -209,6 +210,7 @@ goto end
     set COMMON_ARGS_KEY=%1
     set COMMON_ARGS_VALUE=%2
     if "%COMMON_ARGS_KEY%"=="--repo" (set SUB_REPOSITORY=%COMMON_ARGS_VALUE%)
+    if "%COMMON_ARGS_KEY%"=="--into" (set SUB_REPOSITORY_COMMAND=bash)
     goto end
 
 :cli-dev-help
@@ -218,8 +220,37 @@ goto end
     echo Options:
     echo      --help, -h        Show more information with UP Command.
     echo      --repo            Choose a sub-repository target in repo folder.
+    echo      --into            When container startup then going to container and don't startup dev-server.
     goto end
 
+@rem ------------------- Command "build" method -------------------
+
+:cli-build
+    if DEFINED SUB_REPOSITORY (
+        if EXIST %CLI_DIRECTORY%\repo\%SUB_REPOSITORY% (
+            call :exec-docker %SUB_REPOSITORY% build
+        ) else (
+            echo chosen sub-repository is not exist.
+        )
+    ) else (
+        echo sub-repository was not choose.
+    )
+    goto end
+
+:cli-build-args
+    set COMMON_ARGS_KEY=%1
+    set COMMON_ARGS_VALUE=%2
+    if "%COMMON_ARGS_KEY%"=="--repo" (set SUB_REPOSITORY=%COMMON_ARGS_VALUE%)
+    goto end
+
+:cli-build-help
+    echo This is a Command Line Interface with project %PROJECT_NAME%
+    echo Startup Server
+    echo.
+    echo Options:
+    echo      --help, -h        Show more information with UP Command.
+    echo      --repo            Choose a sub-repository target in repo folder.
+    goto end
 @rem ------------------- End method-------------------
 
 :end
