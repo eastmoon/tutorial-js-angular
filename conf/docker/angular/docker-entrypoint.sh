@@ -5,10 +5,9 @@ set -e
 if [ "${1}" = "node" ]; then
     npm install
     npm run start -- --host 0.0.0.0 --disable-host-check --poll 500
-fi
-if [ "${1}" = "build" ]; then
+elif [ "${1}" = "build" ]; then
     npm install
     npm run build
+else
+    exec "$@"
 fi
-
-exec "$@"
