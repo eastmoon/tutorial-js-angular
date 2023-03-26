@@ -29,11 +29,7 @@ angular dev --repo=<repo-name>
     - 主題
 + [服務專案](./repo/service/README.md)，執行 ```angular dev --repo=service```
 + [導覽專案](./repo/navigation/README.md)，執行 ```angular dev --repo=navigation```
-+ 程式碼分割
-    - [Code Sharing Introduction](https://v6.docs.nativescript.org/angular/code-sharing/intro)
-    - [Speed Up Your Angular Application with Code Splitting](https://www.telerik.com/blogs/speed-up-angular-application-code-splitting)
-    - [Bundling and Code Splitting in Angular](https://www.pluralsight.com/guides/bundling-and-code-splitting-in-angular)
-    - [Route-level code splitting in Angular](https://web.dev/route-level-code-splitting-in-angular/)
++ [編譯設定](./repo/build/README.md)，執行 ```angular dev --repo=build```
 + 動態載入
     - [Lazy-loading feature modules](https://angular.io/guide/lazy-loading-ngmodules)
     - [Dynamic component loader](https://angular.io/guide/dynamic-component-loader)

@@ -1,8 +1,10 @@
 # 編譯設定
 
 + [Build target](https://angular.tw/guide/workspace-config#build-configs)
+    - [How Angular applications start](https://www.dsebastien.net/2021-03-28-angular-application-bootstrap/)
+    - [Code Sharing Introduction](https://v6.docs.nativescript.org/angular/code-sharing/intro)
     - [Angular recommendations and good practices](https://medium.com/nerd-for-tech/angular-recommendations-and-good-practices-d4b732965cad)
-
+    
 ## 建立應用程式專案
 
 + 使用 NG 開發環境建立工作區
