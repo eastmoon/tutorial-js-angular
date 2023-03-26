@@ -33,7 +33,7 @@ angular ng
 
 + 執行專案建立指令
 ```
-ng new base --skip-git --skip-install--style=scss --interactive=false
+ng new base --skip-git --skip-install --style=scss --interactive=false
 ```
 > 由於不需要建立路由，因此移除 ```--routing```
 
