@@ -4,7 +4,7 @@
     - [How Angular applications start](https://www.dsebastien.net/2021-03-28-angular-application-bootstrap/)
     - [Code Sharing Introduction](https://v6.docs.nativescript.org/angular/code-sharing/intro)
     - [Angular recommendations and good practices](https://medium.com/nerd-for-tech/angular-recommendations-and-good-practices-d4b732965cad)
-    
+
 ## 建立應用程式專案
 
 + 使用 NG 開發環境建立工作區
@@ -65,6 +65,50 @@ projects
 原則上，Angular 的編譯程序是從 ```main``` 配合 ```index``` 作為進入點開始解析，最後編譯完成後匯出至 ```outputPath``` 目錄下，這其中，相關的靜態資料會從 ```assets```、樣式資料 ```styles```、外部程式碼 ```scripts``` 會從以上指定目錄集合中彙整至對應的檔案與目錄下；其中 ```budgets``` 設定是指對於程式碼切割方案，若合併後的檔案大於此處設定，會發出僅告或錯誤。
 
 在設定樣式資料 ```styles```、外部程式碼 ```scripts``` 時，可以透過 ```bundleName``` 和 ```inject``` 來樣式或程式碼重新封裝的檔名和是否注入至 HTML 內，若 ```inject: false``` 則該封裝檔不會出現在輸出的 HTML 中，但依然會依據 ```bundleName``` 產生封裝檔且不會加上驗證碼。
+
+## 絕對目錄設定
+
+在 Angular 的專案中，若要找尋特定模組、資源，都採用如下範例的相對目錄。
+
+```
+import { AppComponent } from './app.component';
+```
+
+相對目錄若僅用於同目錄內的專案並無問題，但使用在多層級的結構中，其相對位置的寫法會如下範例。
+
+```
+import { Hero } from '../../services/hero';
+```
+
+若在多重專案的工作區內，又基於模塊考量區分專案、模組、元件、共通模組、共通元件、共通服務、共通資源等資料結構，那層級複雜度會導致大量的相對位置導致程式維護難度上升；因此，若要調整為絕對路徑，就需要設定絕對路徑以確保編譯可以讀取相對應的檔案。
+
++ TypeScript 路徑解析設定在 tsconfig 中
+```
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "#app/*": ["src/app/*"],
+      "#assets/*": ["src/assets/*"],
+      "#services/*": ["src/services/*"]
+    }
+  }
+}
+```
+> 注意，依據 TypeScript 文獻，extends 無法使用多重繼承，僅能單一繼承，因此若要區分設定，請依序使用 extends 來接受正錯的 tsconfig
+
++ CSS 路徑解析設定在 angular.json
+```
+{
+  "stylePreprocessorOptions": {
+    "includePaths": [
+      "src/style-paths"
+    ]
+  }
+}
+```
+> 不同於 TypeScript 是建立目錄的別名，Style 是設定搜尋目錄，因此可以讓 ```@import 'variables';``` 等於 ```@import '../style-paths/variables';```
 
 # Angular operation document
 
