@@ -82,9 +82,8 @@ import { Hero } from '../../services/hero';
 
 若在多重專案的工作區內，又基於模塊考量區分專案、模組、元件、共通模組、共通元件、共通服務、共通資源等資料結構，那層級複雜度會導致大量的相對位置導致程式維護難度上升；因此，若要調整為絕對路徑，就需要設定絕對路徑以確保編譯可以讀取相對應的檔案。
 
-+ TypeScript 路徑解析設定在 tsconfig 中
++ TypeScript 路徑解析設定在 tsconfig 中的 [paths](https://www.typescriptlang.org/tsconfig#paths)
 ```
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
