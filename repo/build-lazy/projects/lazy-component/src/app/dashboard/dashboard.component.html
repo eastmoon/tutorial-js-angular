@@ -1,0 +1,4 @@
+<h1>Lazy loading component dashboard</h1>
+<ng-container *ngIf="heroes">
+   <ng-template [ngComponentOutlet]="heroes | async"></ng-template>
+</ng-container>

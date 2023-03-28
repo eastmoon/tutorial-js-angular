@@ -24,19 +24,10 @@ angular dev --repo=<repo-name>
 
 + [Angular CLI 建立與管理專案](./repo/readme.md)
 + [基礎專案](./repo/base/README.md)，執行 ```angular dev --repo=base```
-    - 單元測試
-    - 語法檢測
-    - 主題
 + [服務專案](./repo/service/README.md)，執行 ```angular dev --repo=service```
 + [導覽專案](./repo/navigation/README.md)，執行 ```angular dev --repo=navigation```
 + [編譯設定](./repo/build/README.md)，執行 ```angular dev --repo=build```
-+ 動態載入
-    - [Lazy-loading feature modules](https://angular.io/guide/lazy-loading-ngmodules)
-    - [Dynamic component loader](https://angular.io/guide/dynamic-component-loader)
-    - [Dynamically import module in Angular](https://dev.to/railsstudent/dynamically-import-module-in-angular-29n6)
-    - [Dynamic Imports: The Best Way to Improve an Angular App’s Performance](https://javascript.plainenglish.io/dynamic-imports-the-best-way-to-improve-angular-application-performance-2295f25adf83)
-    - [Using TypeScript Dynamic Imports in Angular](https://netbasal.com/d210547484dd)
-    - [Dynamic import NgModule | Angular 13](https://medium.com/@teslenkooleg2017/e7183c6743c6)
++ [動態載入](./repo/build-lazy/README.md)，執行 ```angular dev --repo=build-lazy```
 
 ## 文獻
 
