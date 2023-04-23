@@ -67,3 +67,4 @@ angular dev --repo=<repo-name>
         + [Angular CLI builders](https://angular.io/guide/cli-builder)
 + Issue
     - [Angular on Docker hot reload not works](https://stackoverflow.com/questions/69101814)
+    - [single-spa - github](https://github.com/single-spa/single-spa)，A javascript framework for front-end microservices
