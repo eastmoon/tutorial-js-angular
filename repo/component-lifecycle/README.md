@@ -22,6 +22,21 @@ angular dev --repo=component-lifecycle
 
 Angular CLI 運用於建立應用程式，而開發伺服器則是檢視修正內容的即時呈現，兩者會是需要同時啟動的服務；即使不使用 Docker 啟動開發容器，執行其他開發工具也會同時啟動多個命令視窗來檢閱。
 
+## 生命週期
+
++ [Lifecycle hooks](https://angular.io/guide/lifecycle-hooks)
+  - [Components Lifecycle](https://worldline.github.io/angular-training/components/#lifecycle)
+
+元件生命週期是指當元件經由框架產生直到繪製內容的一連串經由框架觸發的同步函數；需注意，生命週期函數內若有執行異步函數，從而導致當前函數完成執行有所延遲，這並不會影響其他生命週期函數的執行，亦即會發生所有 onInit 首先執行，但執行結束在其他生命週期函數之後。
+
+![Angular 生命週期圖示](./img/angular-lifecycle.png)
+
+本範例會於生命週期中觸發必要函數來顯示資訊。
+
++ 開啟瀏覽器於 [localhost](http://localhost/)
++ 開啟開發模式 Ctrl + Shift + i
++ 檢視 Console 內容
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
