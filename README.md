@@ -23,11 +23,18 @@ angular dev --repo=<repo-name>
 本專案執行的範例：
 
 + [Angular CLI 建立與管理專案](./repo/readme.md)
-+ [基礎專案](./repo/base/README.md)，執行 ```angular dev --repo=base```
-+ [服務專案](./repo/service/README.md)，執行 ```angular dev --repo=service```
-+ [導覽專案](./repo/navigation/README.md)，執行 ```angular dev --repo=navigation```
-+ [編譯設定](./repo/build/README.md)，執行 ```angular dev --repo=build```
-+ [動態載入](./repo/build-lazy/README.md)，執行 ```angular dev --repo=build-lazy```
++ Angular 專案特性
+    - [基礎專案](./repo/base/README.md)，執行 ```angular dev --repo=base```
+    - [服務專案](./repo/service/README.md)，執行 ```angular dev --repo=service```
+    - [導覽專案](./repo/navigation/README.md)，執行 ```angular dev --repo=navigation```
+    - [編譯設定](./repo/build/README.md)，執行 ```angular dev --repo=build```
+    - [動態載入](./repo/build-lazy/README.md)，執行 ```angular dev --repo=build-lazy```
++ Angular 元件應用
+    - [Lifecycle](./repo/component-lifecycle/README.md)
+    - [Input & Output](./repo/component-decorator-io/README.md)
+    - [ViewChild](./repo/component-decorator-viewchild/README.md)
+    - [Dynamic Component Loader](./repo/component-dynamic-loader/README.md)
+        + [動態元件載入器](https://angular.tw/guide/dynamic-component-loader)
 
 ## 文獻
 
