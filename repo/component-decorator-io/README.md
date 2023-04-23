@@ -22,6 +22,29 @@ angular dev --repo=component-decorator-io
 
 Angular CLI 運用於建立應用程式，而開發伺服器則是檢視修正內容的即時呈現，兩者會是需要同時啟動的服務；即使不使用 Docker 啟動開發容器，執行其他開發工具也會同時啟動多個命令視窗來檢閱。
 
+## 元件輸入 ( Input ) 與輸出 ( Output ) 裝飾
+
++ Angular Reference
+    - [@Input](https://angular.io/api/core/Input)
+    - [@Output](https://angular.io/api/core/Output)
++ [Angular 2 Input(s) & Output(s) 傻傻分不清](https://ithelp.ithome.com.tw/articles/10188383)
++ [Component - Communication between child and parent components](https://worldline.github.io/angular-training/components/#communication-between-child-and-parent-components)
+
+在 Angular 應用程式基礎中提到[雙向繫結](../base/README.md#雙向繫結)，在這概念中，對於 Component 對應的 HTML element 可運用如 ```ngIf``` 等 Angular 指令，而若對於 Compoennt 內的變數操作，則可利用 ```@Input``` 與 ```@Output``` 裝飾來做到 Component 階級間的訊息傳遞。
+
+![Angular Component Two-way binding](./img/angular-parent-child-two-way-binding.png)
+
+本範例會於顯示 App 對子元件 Counter 間的訊息傳遞，其中共有三個寫法
+
++ 雙向繫結
+  - app-counter 宣告一個擁有 ```@Input``` 裝飾的輸入變數，可透過 ```<app-counter [(count)]=number1>``` 將 number1 內容傳遞給 app-counter，並當變數在內部變更時同步變更匯入變數本身
++ 單向繫結，事件內容寫入變數
+  - app-counter 宣告一個擁有 ```@Input``` 裝飾的輸入變數，可透過 ```<app-counter [count]="number2">``` 將 number2 內容傳遞給 app-counter
+  - app-counter 宣告一個擁有 ```@Output``` 裝飾的事件觸發器，可透過 ```<app-counter (countChange)="number2=$event">``` 讓觸發器對應改變在 app 中的 number2 變數
++ 單向繫結，事件內容匯入處理函數
+  - app-counter 宣告一個擁有 ```@Input``` 裝飾的輸入變數，可透過 ```<app-counter [count]="number3">``` 將 number3 內容傳遞給 app-counter
+  - app-counter 宣告一個擁有 ```@Output``` 裝飾的事件觸發器，可透過 ```<app-counter (countChange)="onCountChanged($event)">``` 讓觸發器對應改變在 app 中的 onCountChanged 處理函數
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
