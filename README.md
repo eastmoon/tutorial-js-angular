@@ -29,12 +29,14 @@ angular dev --repo=<repo-name>
     - [導覽專案](./repo/navigation/README.md)，執行 ```angular dev --repo=navigation```
     - [編譯設定](./repo/build/README.md)，執行 ```angular dev --repo=build```
     - [動態載入](./repo/build-lazy/README.md)，執行 ```angular dev --repo=build-lazy```
-+ Angular 元件應用
-    - [Lifecycle](./repo/component-lifecycle/README.md)
-    - [Input & Output](./repo/component-decorator-io/README.md)
-    - [ViewChild](./repo/component-decorator-viewchild/README.md)
-    - [Dynamic Component Loader](./repo/component-dynamic-loader/README.md)
-        + [動態元件載入器](https://angular.tw/guide/dynamic-component-loader)
++ Angular 應用設計
+    - [Directive](./repo/directives/README.md)，執行 ```angular dev --repo=directives```
+    - Component
+        + [Lifecycle](./repo/component-lifecycle/README.md)，執行 ```angular dev --repo=component-lifecycle```
+        + [Input & Output](./repo/component-decorator-io/README.md)，執行 ```angular dev --repo=component-decorator-io```
+        + [ViewChild](./repo/component-decorator-viewchild/README.md)，執行 ```angular dev --repo=component-decorator-viewchild```
+        + [Dynamic Component Loader](./repo/component-dynamic-loader/README.md)
+            - [動態元件載入器](https://angular.tw/guide/dynamic-component-loader)
 
 ## 文獻
 
