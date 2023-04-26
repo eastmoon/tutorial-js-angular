@@ -38,6 +38,18 @@ angular dev --repo=<repo-name>
         + [Dynamic Component Loader](./repo/component-dynamic-loader/README.md)
             - [動態元件載入器](https://angular.tw/guide/dynamic-component-loader)
 
+## Angular 框架概念
+
+Angular 專案的互動介面構成主要由的元件 ( Component ) 與指令 ( Directive ) 構成，其原理是基於 selector 來尋找對應處理的目標，用相依注入的概念來解釋，即是 Angular 將元件或指令注入 DOM 元素中。
+
+這樣的設計概念，與物件導向的 React 框架相反，其差異之處在於：
+
+**『React 是先存在類別，其後由物件構成 DOM；Angular 則是先存在 DOM，其後由元件注入 DOM 結構、樣式、行為』**
+
+這樣的差異，在解讀程式或設想結構會有不同，雖然 Angular 遵守著物件導向、模組化設計專案，但對於 DOM 的所有元素是注入關係並非生成關係，因此，觸發元件的生命週期方是不存在使用 ```new``` 的方式，而是基於替換發生。
+
+嚴格來說，Angular 的框架是奠基於 DOM 運作原理之上，以更加嚴謹與物件化的框架管理程式、樣式，也可以解釋是更加完善的 jQuery。
+
 ## 文獻
 
 + Introduction
