@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HighlightDirective } from './directives/highlight.directive';
+import { TemplateOutletDirective } from './directives/template-outlet.directive';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'directives';
+  color: string = "black";
 }
