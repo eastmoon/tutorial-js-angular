@@ -35,8 +35,7 @@ angular dev --repo=<repo-name>
         + [Lifecycle](./repo/component-lifecycle/README.md)，執行 ```angular dev --repo=component-lifecycle```
         + [Input & Output](./repo/component-decorator-io/README.md)，執行 ```angular dev --repo=component-decorator-io```
         + [ViewChild](./repo/component-decorator-viewchild/README.md)，執行 ```angular dev --repo=component-decorator-viewchild```
-        + [Dynamic Component Loader](./repo/component-dynamic-loader/README.md)
-            - [動態元件載入器](https://angular.tw/guide/dynamic-component-loader)
+        + [Dynamic Component Loader](./repo/component-dynamic-loader/README.md)，執行 ```angular dev --repo=component-dynamic-loader```
 
 ## Angular 框架概念
 
