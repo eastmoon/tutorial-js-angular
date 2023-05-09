@@ -36,6 +36,7 @@ angular dev --repo=<repo-name>
         + [Input & Output](./repo/component-decorator-io/README.md)，執行 ```angular dev --repo=component-decorator-io```
         + [ViewChild](./repo/component-decorator-viewchild/README.md)，執行 ```angular dev --repo=component-decorator-viewchild```
         + [Dynamic Component Loader](./repo/component-dynamic-loader/README.md)，執行 ```angular dev --repo=component-dynamic-loader```
+    - [Event](./repo/event/README.md)，執行 ```angular dev --repo=event```
 
 ## Angular 框架概念
 
