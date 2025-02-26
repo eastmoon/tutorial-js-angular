@@ -1,0 +1,13 @@
+:host {
+    display: block;
+    max-width: 500px;
+    padding: 5px;
+    margin: 5px 0;
+    border: solid 2px green;
+}
+:host button {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1rem;
+  color: green;
+}
