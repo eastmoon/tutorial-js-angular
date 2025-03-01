@@ -29,6 +29,8 @@ angular dev --repo=<repo-name>
     - [導覽專案](./repo/navigation/README.md)，執行 ```angular dev --repo=navigation```
     - [編譯設定](./repo/build/README.md)，執行 ```angular dev --repo=build```
     - [動態載入](./repo/build-lazy/README.md)，執行 ```angular dev --repo=build-lazy```
+    - [元件樣式封裝設定](./repo/component-styles/README.md)，執行 ```angular dev --repo=component-styles```
+    - [程式碼分割](./repo/build-and-split-code/README.md)，執行 ```angular dev --repo=build-and-split-code```
 + Angular 應用設計
     - [Directive](./repo/directives/README.md)，執行 ```angular dev --repo=directives```
     - Component
